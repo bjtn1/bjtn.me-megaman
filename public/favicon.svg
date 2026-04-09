@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Mega Man helmet pixel art favicon -->
+  <rect width="16" height="16" fill="#0a0e1a"/>
+  <!-- Helmet shape -->
+  <rect x="4" y="2" width="8" height="2" fill="#00a8e8"/>
+  <rect x="3" y="4" width="10" height="2" fill="#00a8e8"/>
+  <rect x="2" y="6" width="12" height="2" fill="#00a8e8"/>
+  <rect x="2" y="8" width="12" height="2" fill="#00a8e8"/>
+  <!-- Face -->
+  <rect x="4" y="6" width="8" height="4" fill="#f5c6a0"/>
+  <!-- Eyes -->
+  <rect x="5" y="7" width="2" height="2" fill="#0a0e1a"/>
+  <rect x="9" y="7" width="2" height="2" fill="#0a0e1a"/>
+  <!-- Eye shine -->
+  <rect x="5" y="7" width="1" height="1" fill="#ffffff"/>
+  <rect x="9" y="7" width="1" height="1" fill="#ffffff"/>
+  <!-- Helmet gem -->
+  <rect x="7" y="3" width="2" height="2" fill="#00e5ff"/>
+</svg>

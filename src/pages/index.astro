@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import MegaHeader from "@/components/MegaHeader";
+import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
+import EducationSection from "@/components/EducationSection";
+import ExperienceSection from "@/components/ExperienceSection";
+import ResumeSection from "@/components/ResumeSection";
+import StageDivider from "@/components/StageDivider";
+import Footer from "@/components/Footer";
+---
+
+<Layout>
+  <MegaHeader client:only="react" />
+
+  <main class="min-h-screen">
+    <HeroSection client:only="react" />
+    <StageDivider />
+    <ResumeSection client:only="react" />
+    <StageDivider />
+    <ProjectsSection client:only="react" />
+    <StageDivider />
+    <SkillsSection client:only="react" />
+    <StageDivider />
+    <EducationSection client:only="react" />
+    <StageDivider />
+    <ExperienceSection client:only="react" />
+  </main>
+  <Footer client:only="react" />
+</Layout>
