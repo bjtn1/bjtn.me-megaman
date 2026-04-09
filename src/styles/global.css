@@ -132,6 +132,198 @@
   --t-name: "ROLL";
 }
 
+/* ═══════════════════════════════════════
+   POKEMON THEMES
+   ═══════════════════════════════════════ */
+
+/* ── Pokemon Red ── */
+[data-theme="pokemon-red"] {
+  --t-primary: #e03030;
+  --t-primary-bright: #ff5555;
+  --t-primary-dark: #8b1a1a;
+  --t-accent: #ff8c00;
+  --t-accent2: #f8d030;
+  --t-success: #78c850;
+  --t-bg: #1a0808;
+  --t-bg-deep: #120404;
+  --t-bg-card: #2a0e0e;
+  --t-bg-muted: #3d1818;
+  --t-text: #fff0f0;
+  --t-text-muted: #b88888;
+  --t-grid-color: rgba(224, 48, 48, 0.05);
+  --t-glow: rgba(224, 48, 48, 0.2);
+  --t-select-color: rgba(224, 48, 48, 0.3);
+  --t-sprite-outline: #8b1a1a;
+  --t-sprite-body: #e03030;
+  --t-sprite-highlight: #ff5555;
+  --t-sprite-gem: #f8d030;
+}
+
+/* ── Pokemon Blue ── */
+[data-theme="pokemon-blue"] {
+  --t-primary: #3b82f6;
+  --t-primary-bright: #60a5fa;
+  --t-primary-dark: #1e40af;
+  --t-accent: #38bdf8;
+  --t-accent2: #fbbf24;
+  --t-success: #78c850;
+  --t-bg: #080e1a;
+  --t-bg-deep: #040812;
+  --t-bg-card: #0e1a2e;
+  --t-bg-muted: #182848;
+  --t-text: #eff6ff;
+  --t-text-muted: #7a9bcc;
+  --t-grid-color: rgba(59, 130, 246, 0.05);
+  --t-glow: rgba(59, 130, 246, 0.2);
+  --t-select-color: rgba(59, 130, 246, 0.3);
+  --t-sprite-outline: #1e40af;
+  --t-sprite-body: #3b82f6;
+  --t-sprite-highlight: #60a5fa;
+  --t-sprite-gem: #fbbf24;
+}
+
+/* ── Pokemon Gold ── */
+[data-theme="pokemon-gold"] {
+  --t-primary: #d4a017;
+  --t-primary-bright: #f0c040;
+  --t-primary-dark: #8b6914;
+  --t-accent: #e8c848;
+  --t-accent2: #c0c0c0;
+  --t-success: #78c850;
+  --t-bg: #181208;
+  --t-bg-deep: #100c04;
+  --t-bg-card: #2a2010;
+  --t-bg-muted: #3d3018;
+  --t-text: #fff8e0;
+  --t-text-muted: #b8a878;
+  --t-grid-color: rgba(212, 160, 23, 0.05);
+  --t-glow: rgba(212, 160, 23, 0.2);
+  --t-select-color: rgba(212, 160, 23, 0.3);
+  --t-sprite-outline: #8b6914;
+  --t-sprite-body: #d4a017;
+  --t-sprite-highlight: #f0c040;
+  --t-sprite-gem: #c0c0c0;
+}
+
+/* ── Pokemon Emerald ── */
+[data-theme="pokemon-emerald"] {
+  --t-primary: #10b981;
+  --t-primary-bright: #34d399;
+  --t-primary-dark: #047857;
+  --t-accent: #6ee7b7;
+  --t-accent2: #fbbf24;
+  --t-success: #22c55e;
+  --t-bg: #081a14;
+  --t-bg-deep: #04120c;
+  --t-bg-card: #0e2a20;
+  --t-bg-muted: #183d30;
+  --t-text: #ecfdf5;
+  --t-text-muted: #78b8a0;
+  --t-grid-color: rgba(16, 185, 129, 0.05);
+  --t-glow: rgba(16, 185, 129, 0.2);
+  --t-select-color: rgba(16, 185, 129, 0.3);
+  --t-sprite-outline: #047857;
+  --t-sprite-body: #10b981;
+  --t-sprite-highlight: #34d399;
+  --t-sprite-gem: #fbbf24;
+}
+
+/* ═══════════════════════════════════════
+   OVERWATCH THEMES
+   ═══════════════════════════════════════ */
+
+/* ── Overwatch (main brand orange) ── */
+[data-theme="overwatch"] {
+  --t-primary: #f99e1a;
+  --t-primary-bright: #ffbb44;
+  --t-primary-dark: #b06c00;
+  --t-accent: #ffffff;
+  --t-accent2: #4a9eff;
+  --t-success: #44ff44;
+  --t-bg: #1a1510;
+  --t-bg-deep: #14100a;
+  --t-bg-card: #2a2218;
+  --t-bg-muted: #3d3225;
+  --t-text: #fff5e0;
+  --t-text-muted: #b8a888;
+  --t-grid-color: rgba(249, 158, 26, 0.05);
+  --t-glow: rgba(249, 158, 26, 0.2);
+  --t-select-color: rgba(249, 158, 26, 0.3);
+  --t-sprite-outline: #b06c00;
+  --t-sprite-body: #f99e1a;
+  --t-sprite-highlight: #ffbb44;
+  --t-sprite-gem: #4a9eff;
+}
+
+/* ── D.Va (pink/blue) ── */
+[data-theme="dva"] {
+  --t-primary: #ed4fac;
+  --t-primary-bright: #ff78c8;
+  --t-primary-dark: #a82d76;
+  --t-accent: #56c4f5;
+  --t-accent2: #ffffff;
+  --t-success: #44ff44;
+  --t-bg: #1a0a16;
+  --t-bg-deep: #14060e;
+  --t-bg-card: #2a1024;
+  --t-bg-muted: #3d1a36;
+  --t-text: #ffe8f8;
+  --t-text-muted: #b87aa8;
+  --t-grid-color: rgba(237, 79, 172, 0.05);
+  --t-glow: rgba(237, 79, 172, 0.2);
+  --t-select-color: rgba(237, 79, 172, 0.3);
+  --t-sprite-outline: #a82d76;
+  --t-sprite-body: #ed4fac;
+  --t-sprite-highlight: #ff78c8;
+  --t-sprite-gem: #56c4f5;
+}
+
+/* ── Genji (green/cyber) ── */
+[data-theme="genji"] {
+  --t-primary: #76ee00;
+  --t-primary-bright: #a0ff44;
+  --t-primary-dark: #4a9900;
+  --t-accent: #00e5a0;
+  --t-accent2: #c0c0c0;
+  --t-success: #76ee00;
+  --t-bg: #0a1a08;
+  --t-bg-deep: #061204;
+  --t-bg-card: #102a0e;
+  --t-bg-muted: #1a3d16;
+  --t-text: #f0ffe0;
+  --t-text-muted: #88b878;
+  --t-grid-color: rgba(118, 238, 0, 0.05);
+  --t-glow: rgba(118, 238, 0, 0.2);
+  --t-select-color: rgba(118, 238, 0, 0.3);
+  --t-sprite-outline: #4a9900;
+  --t-sprite-body: #76ee00;
+  --t-sprite-highlight: #a0ff44;
+  --t-sprite-gem: #00e5a0;
+}
+
+/* ── Reaper (dark red/black) ── */
+[data-theme="reaper"] {
+  --t-primary: #8b0000;
+  --t-primary-bright: #cc2222;
+  --t-primary-dark: #550000;
+  --t-accent: #555555;
+  --t-accent2: #888888;
+  --t-success: #44ff44;
+  --t-bg: #0e0808;
+  --t-bg-deep: #080404;
+  --t-bg-card: #1a0e0e;
+  --t-bg-muted: #2a1818;
+  --t-text: #e8d8d8;
+  --t-text-muted: #8a7070;
+  --t-grid-color: rgba(139, 0, 0, 0.05);
+  --t-glow: rgba(139, 0, 0, 0.2);
+  --t-select-color: rgba(139, 0, 0, 0.3);
+  --t-sprite-outline: #550000;
+  --t-sprite-body: #8b0000;
+  --t-sprite-highlight: #cc2222;
+  --t-sprite-gem: #555555;
+}
+
 /* ── Tailwind / shadcn variable bridge ── */
 :root {
   --radius: 0.375rem;
