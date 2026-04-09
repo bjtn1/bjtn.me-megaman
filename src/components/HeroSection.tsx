@@ -2,6 +2,7 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import MegaManSprite, { BusterShot } from "./MegaManSprite";
+import ThemeBadge from "./ThemeBadge";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -33,6 +34,9 @@ export default function HeroSection() {
       </div>
 
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 md:px-4 relative z-10">
+        {/* Theme badge */}
+        <ThemeBadge />
+
         <motion.div
           className="flex flex-col md:flex-row md:items-center justify-between gap-8"
           variants={containerVariants}

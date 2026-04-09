@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Code, Cpu, GraduationCap, Briefcase } from "lucide-react";
-import ThemePicker from "./ThemePicker";
 
 const navItems = [
   { id: "resume", label: "RESUME", icon: FileText },
@@ -64,20 +63,17 @@ export default function MegaHeader() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2">
-            <ThemePicker />
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-nav"
-              style={{ color: "var(--t-primary)" }}
-            >
-              {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
+            style={{ color: "var(--t-primary)" }}
+          >
+            {isMenuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
+          </button>
         </div>
 
         {/* Mobile Navigation - Stage Select Grid */}

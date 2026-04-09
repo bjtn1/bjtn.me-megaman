@@ -25,17 +25,11 @@ const { title = "BJTN // Mega Man Portfolio", description = "Brandon Jose Tenori
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Theme selection: restore saved choice or randomize. Runs before paint. -->
+    <!-- Random theme selection - runs before paint to avoid flash -->
     <script is:inline>
       (function() {
-        var themes = [
-          "megaman","protoman","bass","zero","roll",
-          "pokemon-red","pokemon-blue","pokemon-gold","pokemon-emerald",
-          "overwatch","dva","genji","reaper"
-        ];
-        var saved = null;
-        try { saved = localStorage.getItem("bjtn-theme"); } catch(e) {}
-        var theme = (saved && themes.indexOf(saved) !== -1) ? saved : themes[Math.floor(Math.random() * themes.length)];
+        var themes = ["megaman", "protoman", "bass", "zero", "roll"];
+        var theme = themes[Math.floor(Math.random() * themes.length)];
         document.documentElement.setAttribute("data-theme", theme);
       })();
     </script>
