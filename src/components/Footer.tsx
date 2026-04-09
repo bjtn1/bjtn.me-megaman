@@ -1,8 +1,6 @@
 import { personalInfo } from "@/lib/data";
-import { useFranchise } from "@/lib/useFranchise";
 
 export default function Footer() {
-  const config = useFranchise();
   return (
     <footer
       className="py-8"
@@ -23,7 +21,7 @@ export default function Footer() {
               ))}
             </div>
             <p className="pixel-text text-[7px]" style={{ color: "var(--t-text-muted)" }}>
-              {config.builtWithLabel}{" "}
+              BUILT WITH{" "}
               <a
                 href="https://astro.build"
                 target="_blank"

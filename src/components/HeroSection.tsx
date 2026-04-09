@@ -1,12 +1,9 @@
 import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-import FranchiseSprite from "./FranchiseSprite";
-import { useFranchise } from "@/lib/useFranchise";
+import MegaManSprite, { BusterShot } from "./MegaManSprite";
 
 export default function HeroSection() {
-  const config = useFranchise();
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } },
@@ -53,7 +50,7 @@ export default function HeroSection() {
                 className="inline-block w-2 h-2 rounded-sm animate-[blink_1s_ease-in-out_infinite]"
                 style={{ backgroundColor: "var(--t-success)" }}
               />
-              {config.readyLabel}
+              READY
             </motion.div>
 
             <motion.h1
@@ -70,7 +67,7 @@ export default function HeroSection() {
               style={{ color: "var(--t-text-muted)" }}
             >
               Software Engineer, musician, and{" "}
-              <span style={{ color: "var(--t-primary)" }}>{config.taglineFlavor}</span> fan
+              <span style={{ color: "var(--t-primary)" }}>Mega Man</span> fan
             </motion.p>
 
             <motion.div className="flex flex-col gap-2 items-center md:items-start" variants={containerVariants}>
@@ -83,7 +80,7 @@ export default function HeroSection() {
                 const Icon = item.icon;
                 const inner = (
                   <span className="flex items-center gap-2 text-sm transition-colors group" style={{ color: "var(--t-text-muted)" }}>
-                    <span className="text-xs font-mono" style={{ color: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} aria-hidden="true">{config.listPrefix}</span>
+                    <span className="text-xs font-mono" style={{ color: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} aria-hidden="true">{">"}</span>
                     <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{item.text}</span>
                   </span>
@@ -123,7 +120,7 @@ export default function HeroSection() {
         >
           <div className="flex items-center gap-2 mb-3" aria-hidden="true">
             <div className="w-2 h-2 rounded-sm" style={{ backgroundColor: "var(--t-primary)" }} />
-            <span className="pixel-text text-[8px]" style={{ color: "var(--t-primary)" }}>{config.bioTitle}</span>
+            <span className="pixel-text text-[8px]" style={{ color: "var(--t-primary)" }}>MISSION BRIEF</span>
           </div>
           <p className="text-sm leading-relaxed" style={{ color: "var(--t-text-muted)" }}>
             Computer science graduate from the University of Maryland, Baltimore County.
@@ -131,9 +128,12 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* Franchise sprite - decorative */}
+        {/* Sprite - decorative */}
         <div className="mt-6 sm:mt-8 flex items-center justify-center md:justify-start gap-2" aria-hidden="true">
-          <FranchiseSprite size={64} />
+          <div className="animate-float">
+            <MegaManSprite size={64} />
+          </div>
+          <BusterShot className="ml-1" />
         </div>
       </div>
     </section>

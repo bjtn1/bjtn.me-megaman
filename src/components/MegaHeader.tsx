@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Code, Cpu, GraduationCap, Briefcase } from "lucide-react";
 import ThemePicker from "./ThemePicker";
-import { useFranchise } from "@/lib/useFranchise";
 
 const navItems = [
   { id: "resume", label: "RESUME", icon: FileText },
@@ -15,7 +14,6 @@ const navItems = [
 
 export default function MegaHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const config = useFranchise();
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -98,7 +96,7 @@ export default function MegaHeader() {
             >
               <div className="text-center pt-8 pb-4">
                 <span className="pixel-text text-[10px] tracking-widest" style={{ color: "var(--t-accent2)" }}>
-                  {config.mobileNavTitle}
+                  STAGE SELECT
                 </span>
               </div>
 
@@ -146,7 +144,7 @@ export default function MegaHeader() {
 
               <div className="text-center mt-6 pb-8">
                 <span className="pixel-text text-[7px] animate-[blink_1.5s_ease-in-out_infinite]" style={{ color: "color-mix(in srgb, var(--t-text-muted) 60%, transparent)" }} aria-hidden="true">
-                  {config.mobileNavHint}
+                  SELECT A STAGE
                 </span>
               </div>
             </motion.div>

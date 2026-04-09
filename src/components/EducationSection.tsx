@@ -1,10 +1,8 @@
 import { education } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { useFranchise } from "@/lib/useFranchise";
 
 export default function EducationSection() {
-  const config = useFranchise();
   return (
     <section id="education" className="py-12" aria-label="Education">
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 md:px-4">
@@ -52,7 +50,7 @@ export default function EducationSection() {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.03 }}
                       >
-                        <span style={{ color: "color-mix(in srgb, var(--t-primary) 40%, transparent)" }} aria-hidden="true">{config.listPrefix}</span>
+                        <span style={{ color: "color-mix(in srgb, var(--t-primary) 40%, transparent)" }} aria-hidden="true">{">"}</span>
                         <span>{course}</span>
                       </motion.li>
                     ))}

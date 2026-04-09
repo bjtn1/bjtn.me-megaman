@@ -1,10 +1,8 @@
 import { workExperience } from "@/lib/data";
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { useFranchise } from "@/lib/useFranchise";
 
 export default function ExperienceSection() {
-  const config = useFranchise();
   return (
     <section id="experience" className="py-12" aria-label="Work experience">
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 md:px-4">
@@ -59,7 +57,7 @@ export default function ExperienceSection() {
                           viewport={{ once: true }}
                           transition={{ delay: i * 0.05 }}
                         >
-                          <span className="mt-0.5 text-xs shrink-0" style={{ color: "var(--t-primary)" }} aria-hidden="true">{config.achievementPrefix}</span>
+                          <span className="mt-0.5 text-xs shrink-0" style={{ color: "var(--t-primary)" }} aria-hidden="true">{"//"}</span>
                           <span>{achievement}</span>
                         </motion.li>
                       ))}

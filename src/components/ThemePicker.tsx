@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Palette, X, Shuffle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getFranchise } from "@/lib/franchise";
 
 interface ThemeDef {
   id: string;
@@ -33,7 +32,6 @@ const groups = ["MEGA MAN", "POKEMON", "OVERWATCH"];
 
 function applyTheme(id: string) {
   document.documentElement.setAttribute("data-theme", id);
-  document.documentElement.setAttribute("data-franchise", getFranchise(id));
   try { localStorage.setItem("bjtn-theme", id); } catch {}
 }
 

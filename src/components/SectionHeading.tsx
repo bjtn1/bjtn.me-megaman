@@ -1,27 +1,6 @@
 import { motion } from "framer-motion";
-import { useFranchise } from "@/lib/useFranchise";
 
 export default function SectionHeading({ children }: { children: string }) {
-  const config = useFranchise();
-
-  const indicator =
-    config.franchise === "pokemon" ? (
-      <div className="flex items-center gap-1" aria-hidden="true">
-        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "var(--t-primary)" }} />
-        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} />
-      </div>
-    ) : config.franchise === "overwatch" ? (
-      <div className="flex items-center gap-1" aria-hidden="true">
-        <div className="w-3 h-3" style={{ backgroundColor: "var(--t-primary)", clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }} />
-        <div className="w-1 h-4" style={{ backgroundColor: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} />
-      </div>
-    ) : (
-      <div className="flex items-center gap-1" aria-hidden="true">
-        <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "var(--t-primary)" }} />
-        <div className="w-1.5 h-1.5 rounded-sm" style={{ backgroundColor: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} />
-      </div>
-    );
-
   return (
     <motion.div
       className="flex items-center gap-3 mb-8"
@@ -30,7 +9,10 @@ export default function SectionHeading({ children }: { children: string }) {
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
     >
-      {indicator}
+      <div className="flex items-center gap-1" aria-hidden="true">
+        <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: "var(--t-primary)" }} />
+        <div className="w-1.5 h-1.5 rounded-sm" style={{ backgroundColor: "color-mix(in srgb, var(--t-primary) 50%, transparent)" }} />
+      </div>
       <h2
         className="pixel-text text-[10px] sm:text-xs md:text-sm tracking-wider"
         style={{ color: "var(--t-primary)", textShadow: "0 0 10px var(--t-glow)" }}
