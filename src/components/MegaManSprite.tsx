@@ -1,0 +1,101 @@
+import { motion } from "framer-motion";
+
+/**
+ * Pixel art Mega Man in running/shooting pose, built entirely from SVG rects.
+ * Based on the classic NES Mega Man sprite palette.
+ */
+export default function MegaManSprite({
+  size = 120,
+  className = "",
+}: {
+  size?: number;
+  className?: string;
+}) {
+  // 16x16 pixel grid, each cell is one "pixel"
+  // Colors: B = dark blue, b = light blue, S = skin, W = white, E = eye(black), _ = transparent
+  const pixels: [number, number, string][] = [
+    // Helmet top
+    [5, 0, "#0070c0"], [6, 0, "#0070c0"], [7, 0, "#0070c0"], [8, 0, "#0070c0"], [9, 0, "#0070c0"], [10, 0, "#0070c0"],
+    [4, 1, "#0070c0"], [5, 1, "#00a8e8"], [6, 1, "#00a8e8"], [7, 1, "#00a8e8"], [8, 1, "#00a8e8"], [9, 1, "#00a8e8"], [10, 1, "#00a8e8"], [11, 1, "#0070c0"],
+    [3, 2, "#0070c0"], [4, 2, "#00a8e8"], [5, 2, "#00d4ff"], [6, 2, "#00d4ff"], [7, 2, "#00a8e8"], [8, 2, "#00a8e8"], [9, 2, "#00a8e8"], [10, 2, "#00a8e8"], [11, 2, "#00a8e8"], [12, 2, "#0070c0"],
+    // Helmet + gem
+    [3, 3, "#0070c0"], [4, 3, "#00a8e8"], [5, 3, "#00d4ff"], [6, 3, "#00e5ff"], [7, 3, "#00a8e8"], [8, 3, "#00a8e8"], [9, 3, "#00a8e8"], [10, 3, "#00a8e8"], [11, 3, "#00a8e8"], [12, 3, "#0070c0"],
+    // Face row 1 (eyes)
+    [3, 4, "#0070c0"], [4, 4, "#f5c6a0"], [5, 4, "#f5c6a0"], [6, 4, "#f5c6a0"], [7, 4, "#f5c6a0"], [8, 4, "#f5c6a0"], [9, 4, "#f5c6a0"], [10, 4, "#f5c6a0"], [11, 4, "#f5c6a0"], [12, 4, "#0070c0"],
+    [3, 5, "#0070c0"], [4, 5, "#f5c6a0"], [5, 5, "#ffffff"], [6, 5, "#0a0e1a"], [7, 5, "#f5c6a0"], [8, 5, "#f5c6a0"], [9, 5, "#ffffff"], [10, 5, "#0a0e1a"], [11, 5, "#f5c6a0"], [12, 5, "#0070c0"],
+    // Face row 2 (mouth)
+    [4, 6, "#f5c6a0"], [5, 6, "#f5c6a0"], [6, 6, "#f5c6a0"], [7, 6, "#f5c6a0"], [8, 6, "#f5c6a0"], [9, 6, "#f5c6a0"], [10, 6, "#f5c6a0"], [11, 6, "#f5c6a0"],
+    [4, 7, "#f5c6a0"], [5, 7, "#f5c6a0"], [6, 7, "#d4956a"], [7, 7, "#d4956a"], [8, 7, "#d4956a"], [9, 7, "#f5c6a0"], [10, 7, "#f5c6a0"], [11, 7, "#f5c6a0"],
+    // Body
+    [4, 8, "#0070c0"], [5, 8, "#00a8e8"], [6, 8, "#00a8e8"], [7, 8, "#00a8e8"], [8, 8, "#00a8e8"], [9, 8, "#00a8e8"], [10, 8, "#00a8e8"], [11, 8, "#0070c0"],
+    [3, 9, "#0070c0"], [4, 9, "#00a8e8"], [5, 9, "#00d4ff"], [6, 9, "#00a8e8"], [7, 9, "#00a8e8"], [8, 9, "#00a8e8"], [9, 9, "#00a8e8"], [10, 9, "#00a8e8"], [11, 9, "#00a8e8"], [12, 9, "#0070c0"],
+    // Buster arm (right, shooting)
+    [12, 8, "#0070c0"], [13, 8, "#00a8e8"], [14, 8, "#00a8e8"], [15, 8, "#0070c0"],
+    [12, 9, "#00a8e8"], [13, 9, "#00d4ff"], [14, 9, "#00d4ff"], [15, 9, "#0070c0"],
+    [12, 10, "#0070c0"], [13, 10, "#00a8e8"], [14, 10, "#00a8e8"], [15, 10, "#0070c0"],
+    // Waist / shorts
+    [5, 10, "#0070c0"], [6, 10, "#00a8e8"], [7, 10, "#00a8e8"], [8, 10, "#00a8e8"], [9, 10, "#00a8e8"], [10, 10, "#0070c0"],
+    [4, 11, "#0070c0"], [5, 11, "#00a8e8"], [6, 11, "#00a8e8"], [7, 11, "#0070c0"], [8, 11, "#0070c0"], [9, 11, "#00a8e8"], [10, 11, "#00a8e8"], [11, 11, "#0070c0"],
+    // Legs (running pose - one forward, one back)
+    [3, 12, "#0070c0"], [4, 12, "#00a8e8"], [5, 12, "#00a8e8"], [6, 12, "#0070c0"],                      [9, 12, "#0070c0"], [10, 12, "#00a8e8"], [11, 12, "#00a8e8"], [12, 12, "#0070c0"],
+    [2, 13, "#0070c0"], [3, 13, "#00a8e8"], [4, 13, "#00a8e8"], [5, 13, "#0070c0"],                      [10, 13, "#0070c0"], [11, 13, "#00a8e8"], [12, 13, "#00a8e8"], [13, 13, "#0070c0"],
+    // Boots
+    [1, 14, "#0070c0"], [2, 14, "#00a8e8"], [3, 14, "#00a8e8"], [4, 14, "#00a8e8"], [5, 14, "#0070c0"],  [10, 14, "#0070c0"], [11, 14, "#00a8e8"], [12, 14, "#00a8e8"], [13, 14, "#00a8e8"], [14, 14, "#0070c0"],
+    [1, 15, "#0070c0"], [2, 15, "#0070c0"], [3, 15, "#0070c0"], [4, 15, "#0070c0"], [5, 15, "#0070c0"],  [10, 15, "#0070c0"], [11, 15, "#0070c0"], [12, 15, "#0070c0"], [13, 15, "#0070c0"], [14, 15, "#0070c0"],
+  ];
+
+  const cellSize = size / 16;
+
+  return (
+    <motion.div
+      className={className}
+      style={{ width: size, height: size }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, type: "spring" }}
+    >
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 16 16"
+        style={{ imageRendering: "pixelated" }}
+      >
+        {pixels.map(([x, y, color], i) => (
+          <rect key={i} x={x} y={y} width={1} height={1} fill={color} />
+        ))}
+      </svg>
+    </motion.div>
+  );
+}
+
+/**
+ * Buster shot projectile - three small energy pellets
+ */
+export function BusterShot({ className = "" }: { className?: string }) {
+  return (
+    <div className={`flex items-center gap-1 ${className}`}>
+      {[0, 1, 2].map((i) => (
+        <motion.div
+          key={i}
+          className="rounded-full bg-[#00e5ff]"
+          style={{
+            width: 4 + i * 2,
+            height: 4 + i * 2,
+            boxShadow: `0 0 ${4 + i * 3}px #00e5ff, 0 0 ${8 + i * 4}px #00a8e8`,
+          }}
+          animate={{
+            x: [0, 30 + i * 10],
+            opacity: [1, 0],
+          }}
+          transition={{
+            duration: 0.8,
+            repeat: Infinity,
+            delay: i * 0.2,
+            ease: "easeOut",
+            repeatDelay: 1.5,
+          }}
+        />
+      ))}
+    </div>
+  );
+}

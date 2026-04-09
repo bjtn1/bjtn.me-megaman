@@ -1,6 +1,7 @@
 import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import MegaManSprite, { BusterShot } from "./MegaManSprite";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -177,6 +178,22 @@ export default function HeroSection() {
             Computer science graduate from the University of Maryland, Baltimore County.
             Interests: Privacy, Data Recovery, Cybersecurity, Data Management, and Machine Learning.
           </p>
+        </motion.div>
+
+        {/* Mega Man sprite running across the bottom */}
+        <motion.div
+          className="mt-8 flex items-center justify-center md:justify-start gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.4 }}
+        >
+          <motion.div
+            animate={{ x: [0, 8, 0] }}
+            transition={{ duration: 0.6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <MegaManSprite size={64} />
+          </motion.div>
+          <BusterShot className="ml-1" />
         </motion.div>
       </div>
     </section>
