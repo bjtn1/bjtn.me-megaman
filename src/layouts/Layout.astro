@@ -37,6 +37,10 @@ const { title = "BJTN // Mega Man Portfolio", description = "Brandon Jose Tenori
         try { saved = localStorage.getItem("bjtn-theme"); } catch(e) {}
         var theme = (saved && themes.indexOf(saved) !== -1) ? saved : themes[Math.floor(Math.random() * themes.length)];
         document.documentElement.setAttribute("data-theme", theme);
+        var franchise = theme.indexOf("pokemon") === 0 ? "pokemon"
+          : (theme === "overwatch" || theme === "dva" || theme === "genji" || theme === "reaper") ? "overwatch"
+          : "megaman";
+        document.documentElement.setAttribute("data-franchise", franchise);
       })();
     </script>
   </head>

@@ -383,7 +383,11 @@
   }
 }
 
-/* Scanline overlay effect */
+/* ═══════════════════════════════════════
+   FRANCHISE-LEVEL AESTHETIC OVERRIDES
+   ═══════════════════════════════════════ */
+
+/* ── Mega Man: scanlines + grid + pixel aesthetic ── */
 .scanlines::after {
   content: "";
   position: fixed;
@@ -402,12 +406,63 @@
   );
 }
 
-/* Grid background - uses theme variable */
 .mm-grid-bg {
   background-image:
     linear-gradient(var(--t-grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--t-grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+/* ── Pokemon: no scanlines, dot-field background, rounded everything ── */
+[data-franchise="pokemon"] .scanlines::after {
+  display: none;
+}
+
+[data-franchise="pokemon"] .mm-grid-bg {
+  background-image: radial-gradient(circle, var(--t-grid-color) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+[data-franchise="pokemon"] .pixel-border {
+  border: 2px solid var(--t-primary);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px var(--t-glow), 0 0 0 1px color-mix(in srgb, var(--t-primary) 10%, transparent);
+}
+
+[data-franchise="pokemon"] .pixel-text {
+  font-family: "Press Start 2P", monospace;
+}
+
+/* ── Overwatch: no scanlines, diagonal crosshatch, angular/modern ── */
+[data-franchise="overwatch"] .scanlines::after {
+  display: none;
+}
+
+[data-franchise="overwatch"] .mm-grid-bg {
+  background-image:
+    linear-gradient(135deg, var(--t-grid-color) 25%, transparent 25%),
+    linear-gradient(225deg, var(--t-grid-color) 25%, transparent 25%),
+    linear-gradient(45deg, var(--t-grid-color) 25%, transparent 25%),
+    linear-gradient(315deg, var(--t-grid-color) 25%, transparent 25%);
+  background-size: 40px 40px;
+  background-position: 20px 0, 20px 0, 0 0, 0 0;
+}
+
+[data-franchise="overwatch"] .pixel-border {
+  border: 1px solid var(--t-primary);
+  border-radius: 3px;
+  box-shadow:
+    0 0 20px var(--t-glow),
+    inset 0 1px 0 color-mix(in srgb, var(--t-primary) 15%, transparent);
+}
+
+[data-franchise="overwatch"] .pixel-text {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  image-rendering: auto;
+  letter-spacing: 0.12em;
+  font-weight: 700;
 }
 
 /* Animations */
