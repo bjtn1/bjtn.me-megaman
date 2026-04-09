@@ -184,3 +184,53 @@
   background: rgba(0, 168, 232, 0.3);
   color: var(--mm-cyan);
 }
+
+/* Focus visible - 508 compliance */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--mm-yellow);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Skip to content link - 508 */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: var(--mm-yellow);
+  color: var(--mm-dark);
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  text-decoration: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Reduced motion - 508 compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scanlines::after {
+    display: none;
+  }
+
+  .animate-float,
+  .animate-glow-pulse,
+  .animate-text-glow {
+    animation: none;
+  }
+}

@@ -1,6 +1,6 @@
 export default function StageDivider() {
   return (
-    <div className="relative h-8 w-full my-4 flex items-center justify-center overflow-hidden">
+    <div className="relative h-8 w-full my-4 flex items-center justify-center overflow-hidden" role="separator" aria-hidden="true">
       {/* Left line */}
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#00a8e8]/30 to-[#00a8e8]/50" />
 
