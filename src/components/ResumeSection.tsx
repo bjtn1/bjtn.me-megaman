@@ -19,23 +19,29 @@ export default function ResumeSection() {
           viewport={{ once: true }}
           whileHover={{ y: -3 }}
         >
-          <div className="pixel-border rounded-lg p-4 sm:p-6 bg-[#0f1528]/60 backdrop-blur-sm hover:bg-[#0f1528]/80 transition-colors group overflow-hidden">
+          <div
+            className="pixel-border rounded-lg p-4 sm:p-6 backdrop-blur-sm transition-colors group overflow-hidden"
+            style={{ backgroundColor: "color-mix(in srgb, var(--t-bg-card) 60%, transparent)" }}
+          >
             <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#00a8e8]/10 border border-[#00a8e8]/20 shrink-0">
-                <FileText className="h-5 w-5 text-[#00a8e8]" aria-hidden="true" />
+              <div
+                className="w-10 h-10 flex items-center justify-center rounded-lg border shrink-0"
+                style={{
+                  backgroundColor: "color-mix(in srgb, var(--t-primary) 10%, transparent)",
+                  borderColor: "color-mix(in srgb, var(--t-primary) 20%, transparent)",
+                }}
+              >
+                <FileText className="h-5 w-5" style={{ color: "var(--t-primary)" }} aria-hidden="true" />
               </div>
               <div className="min-w-0 flex-1">
-                <h3 className="text-xs sm:text-sm font-medium text-[#e8f0ff] group-hover:text-[#00a8e8] transition-colors break-all sm:break-normal">
+                <h3 className="text-xs sm:text-sm font-medium break-all sm:break-normal transition-colors" style={{ color: "var(--t-text)" }}>
                   BrandonJose_TenorioNoguera_Resume.pdf
                 </h3>
-                <p className="text-xs text-[#7a8ba8] mt-1">
+                <p className="text-xs mt-1" style={{ color: "var(--t-text-muted)" }}>
                   Concise 1-page resume with key highlights
                 </p>
               </div>
-              <div
-                className="hidden sm:flex items-center gap-2 pixel-text text-[7px] text-[#00a8e8] opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
-                aria-hidden="true"
-              >
+              <div className="hidden sm:flex items-center gap-2 pixel-text text-[7px] opacity-0 group-hover:opacity-100 transition-opacity shrink-0" style={{ color: "var(--t-primary)" }} aria-hidden="true">
                 <Download className="h-3.5 w-3.5" />
                 OPEN
               </div>

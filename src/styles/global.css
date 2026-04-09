@@ -3,40 +3,156 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Mega Man Color Palette */
-:root {
-  --mm-dark: #0a0e1a;
-  --mm-darker: #060a14;
-  --mm-blue: #00a8e8;
-  --mm-blue-bright: #00d4ff;
-  --mm-blue-dark: #005f8a;
-  --mm-cyan: #00e5ff;
-  --mm-yellow: #ffd700;
-  --mm-red: #ff4444;
-  --mm-green: #44ff44;
-  --mm-white: #e8f0ff;
-  --mm-gray: #4a5568;
-  --mm-grid: rgba(0, 168, 232, 0.06);
+/*
+ * Theme system: 5 character themes from the Mega Man universe.
+ * One is randomly selected on each page visit via an inline script.
+ * All component colors reference these variables.
+ */
 
+/* ── Default / Mega Man (blue) ── */
+:root,
+[data-theme="megaman"] {
+  --t-primary: #00a8e8;
+  --t-primary-bright: #00d4ff;
+  --t-primary-dark: #005f8a;
+  --t-accent: #00e5ff;
+  --t-accent2: #ffd700;
+  --t-success: #44ff44;
+  --t-bg: #0a0e1a;
+  --t-bg-deep: #060a14;
+  --t-bg-card: #0f1528;
+  --t-bg-muted: #1a2040;
+  --t-text: #e8f0ff;
+  --t-text-muted: #7a8ba8;
+  --t-grid-color: rgba(0, 168, 232, 0.05);
+  --t-glow: rgba(0, 168, 232, 0.2);
+  --t-select-color: rgba(0, 168, 232, 0.3);
+  /* Sprite colors */
+  --t-sprite-outline: #0070c0;
+  --t-sprite-body: #00a8e8;
+  --t-sprite-highlight: #00d4ff;
+  --t-sprite-gem: #00e5ff;
+  /* Theme label */
+  --t-name: "MEGA MAN";
+}
+
+/* ── Proto Man (red/orange) ── */
+[data-theme="protoman"] {
+  --t-primary: #e84040;
+  --t-primary-bright: #ff6b6b;
+  --t-primary-dark: #8a2020;
+  --t-accent: #ff9f43;
+  --t-accent2: #cccccc;
+  --t-success: #44ff44;
+  --t-bg: #1a0a0a;
+  --t-bg-deep: #140606;
+  --t-bg-card: #281010;
+  --t-bg-muted: #3a1a1a;
+  --t-text: #ffe8e8;
+  --t-text-muted: #a87a7a;
+  --t-grid-color: rgba(232, 64, 64, 0.05);
+  --t-glow: rgba(232, 64, 64, 0.2);
+  --t-select-color: rgba(232, 64, 64, 0.3);
+  --t-sprite-outline: #a02020;
+  --t-sprite-body: #e84040;
+  --t-sprite-highlight: #ff6b6b;
+  --t-sprite-gem: #ff9f43;
+  --t-name: "PROTO MAN";
+}
+
+/* ── Bass (purple/magenta) ── */
+[data-theme="bass"] {
+  --t-primary: #9b59b6;
+  --t-primary-bright: #c084e0;
+  --t-primary-dark: #5e2d82;
+  --t-accent: #e056a0;
+  --t-accent2: #ffd700;
+  --t-success: #44ff44;
+  --t-bg: #0e0a1a;
+  --t-bg-deep: #080614;
+  --t-bg-card: #181028;
+  --t-bg-muted: #261a40;
+  --t-text: #f0e8ff;
+  --t-text-muted: #8a7aaa;
+  --t-grid-color: rgba(155, 89, 182, 0.05);
+  --t-glow: rgba(155, 89, 182, 0.2);
+  --t-select-color: rgba(155, 89, 182, 0.3);
+  --t-sprite-outline: #5e2d82;
+  --t-sprite-body: #9b59b6;
+  --t-sprite-highlight: #c084e0;
+  --t-sprite-gem: #e056a0;
+  --t-name: "BASS";
+}
+
+/* ── Zero (red/crimson/gold) ── */
+[data-theme="zero"] {
+  --t-primary: #dc3545;
+  --t-primary-bright: #ff5a6a;
+  --t-primary-dark: #8b1a25;
+  --t-accent: #ff2d55;
+  --t-accent2: #ffc107;
+  --t-success: #44ff44;
+  --t-bg: #1a0a0e;
+  --t-bg-deep: #140608;
+  --t-bg-card: #280f15;
+  --t-bg-muted: #401a24;
+  --t-text: #fff0f2;
+  --t-text-muted: #b08890;
+  --t-grid-color: rgba(220, 53, 69, 0.05);
+  --t-glow: rgba(220, 53, 69, 0.2);
+  --t-select-color: rgba(220, 53, 69, 0.3);
+  --t-sprite-outline: #8b1a25;
+  --t-sprite-body: #dc3545;
+  --t-sprite-highlight: #ff5a6a;
+  --t-sprite-gem: #ffc107;
+  --t-name: "ZERO";
+}
+
+/* ── Roll (pink/magenta) ── */
+[data-theme="roll"] {
+  --t-primary: #e6559a;
+  --t-primary-bright: #ff7eb8;
+  --t-primary-dark: #993366;
+  --t-accent: #ff9ecd;
+  --t-accent2: #88ddff;
+  --t-success: #44ff44;
+  --t-bg: #1a0a14;
+  --t-bg-deep: #14060e;
+  --t-bg-card: #281020;
+  --t-bg-muted: #3a1a30;
+  --t-text: #ffe8f4;
+  --t-text-muted: #aa7a94;
+  --t-grid-color: rgba(230, 85, 154, 0.05);
+  --t-glow: rgba(230, 85, 154, 0.2);
+  --t-select-color: rgba(230, 85, 154, 0.3);
+  --t-sprite-outline: #993366;
+  --t-sprite-body: #e6559a;
+  --t-sprite-highlight: #ff7eb8;
+  --t-sprite-gem: #88ddff;
+  --t-name: "ROLL";
+}
+
+/* ── Tailwind / shadcn variable bridge ── */
+:root {
   --radius: 0.375rem;
-  --background: #0a0e1a;
-  --foreground: #e8f0ff;
-  --card: #0f1528;
-  --card-foreground: #e8f0ff;
-  --popover: #0f1528;
-  --popover-foreground: #e8f0ff;
-  --primary: #00a8e8;
-  --primary-foreground: #0a0e1a;
-  --secondary: #1a2040;
-  --secondary-foreground: #e8f0ff;
-  --muted: #1a2040;
-  --muted-foreground: #7a8ba8;
-  --accent: #1a2040;
-  --accent-foreground: #e8f0ff;
+  --background: var(--t-bg);
+  --foreground: var(--t-text);
+  --card: var(--t-bg-card);
+  --card-foreground: var(--t-text);
+  --popover: var(--t-bg-card);
+  --popover-foreground: var(--t-text);
+  --primary: var(--t-primary);
+  --primary-foreground: var(--t-bg);
+  --secondary: var(--t-bg-muted);
+  --secondary-foreground: var(--t-text);
+  --muted: var(--t-bg-muted);
+  --muted-foreground: var(--t-text-muted);
+  --accent: var(--t-bg-muted);
+  --accent-foreground: var(--t-text);
   --destructive: #ff4444;
-  --border: rgba(0, 168, 232, 0.15);
-  --input: rgba(0, 168, 232, 0.15);
-  --ring: #00a8e8;
+  --border: color-mix(in srgb, var(--t-primary) 15%, transparent);
+  --input: color-mix(in srgb, var(--t-primary) 15%, transparent);
+  --ring: var(--t-primary);
 }
 
 @theme inline {
@@ -94,20 +210,15 @@
   );
 }
 
-/* Grid background */
+/* Grid background - uses theme variable */
 .mm-grid-bg {
   background-image:
-    linear-gradient(rgba(0, 168, 232, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 168, 232, 0.05) 1px, transparent 1px);
+    linear-gradient(var(--t-grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--t-grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* HP Bar animations */
-@keyframes hp-fill {
-  from { width: 0%; }
-  to { width: var(--hp-width); }
-}
-
+/* Animations */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -119,18 +230,8 @@
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 5px var(--mm-blue), 0 0 10px var(--mm-blue); }
-  50% { box-shadow: 0 0 10px var(--mm-blue), 0 0 20px var(--mm-blue), 0 0 30px var(--mm-blue); }
-}
-
-@keyframes text-glow {
-  0%, 100% { text-shadow: 0 0 5px var(--mm-blue); }
-  50% { text-shadow: 0 0 10px var(--mm-blue), 0 0 20px var(--mm-cyan); }
-}
-
-@keyframes stage-intro {
-  0% { transform: scaleX(0); }
-  100% { transform: scaleX(1); }
+  0%, 100% { box-shadow: 0 0 5px var(--t-primary), 0 0 10px var(--t-primary); }
+  50% { box-shadow: 0 0 10px var(--t-primary), 0 0 20px var(--t-primary), 0 0 30px var(--t-primary); }
 }
 
 .animate-float {
@@ -141,16 +242,13 @@
   animation: glow-pulse 2s ease-in-out infinite;
 }
 
-.animate-text-glow {
-  animation: text-glow 2s ease-in-out infinite;
-}
-
+/* Pixel border - uses theme primary */
 .pixel-border {
-  border: 2px solid var(--mm-blue);
+  border: 2px solid var(--t-primary);
   box-shadow:
-    inset 0 0 0 1px var(--mm-dark),
-    0 0 0 1px var(--mm-blue),
-    0 0 10px rgba(0, 168, 232, 0.2);
+    inset 0 0 0 1px var(--t-bg),
+    0 0 0 1px var(--t-primary),
+    0 0 10px var(--t-glow);
 }
 
 /* Pixel-perfect text rendering for pixel font */
@@ -167,29 +265,29 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--mm-darker);
+  background: var(--t-bg-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--mm-blue-dark);
+  background: var(--t-primary-dark);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--mm-blue);
+  background: var(--t-primary);
 }
 
 /* Selection styling */
 ::selection {
-  background: rgba(0, 168, 232, 0.3);
-  color: var(--mm-cyan);
+  background: var(--t-select-color);
+  color: var(--t-accent);
 }
 
 /* Focus visible - 508 compliance */
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--mm-yellow);
+  outline: 2px solid var(--t-accent2);
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -201,8 +299,8 @@ button:focus-visible,
   left: 16px;
   z-index: 10000;
   padding: 8px 16px;
-  background: var(--mm-yellow);
-  color: var(--mm-dark);
+  background: var(--t-accent2);
+  color: var(--t-bg);
   font-family: "Press Start 2P", monospace;
   font-size: 10px;
   text-decoration: none;
@@ -229,8 +327,7 @@ button:focus-visible,
   }
 
   .animate-float,
-  .animate-glow-pulse,
-  .animate-text-glow {
+  .animate-glow-pulse {
     animation: none;
   }
 }

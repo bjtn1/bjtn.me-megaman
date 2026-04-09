@@ -25,9 +25,18 @@ const { title = "BJTN // Mega Man Portfolio", description = "Brandon Jose Tenori
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Random theme selection - runs before paint to avoid flash -->
+    <script is:inline>
+      (function() {
+        var themes = ["megaman", "protoman", "bass", "zero", "roll"];
+        var theme = themes[Math.floor(Math.random() * themes.length)];
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body
-    class="min-h-screen bg-[#0a0e1a] font-[JetBrains_Mono,monospace] antialiased scanlines mm-grid-bg"
+    class="min-h-screen font-[JetBrains_Mono,monospace] antialiased scanlines mm-grid-bg"
+    style="background-color: var(--t-bg);"
   >
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <slot />

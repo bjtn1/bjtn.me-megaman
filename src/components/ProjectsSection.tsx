@@ -13,60 +13,78 @@ export default function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              className="pixel-border rounded-lg bg-[#0f1528]/60 backdrop-blur-sm overflow-hidden group hover:bg-[#0f1528]/80 transition-all"
+              className="pixel-border rounded-lg backdrop-blur-sm overflow-hidden group transition-all"
+              style={{ backgroundColor: "color-mix(in srgb, var(--t-bg-card) 60%, transparent)" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -4 }}
             >
-              {/* Header bar */}
-              <div className="px-4 sm:px-5 py-3 border-b border-[#00a8e8]/10 bg-[#00a8e8]/5 flex items-center gap-2">
-                <div className="w-2 h-2 bg-[#00a8e8] rounded-sm group-hover:animate-[blink_1s_ease-in-out_infinite]" aria-hidden="true" />
-                <h3 className="pixel-text text-[8px] sm:text-[9px] text-[#00a8e8] tracking-wide">
+              {/* Header */}
+              <div
+                className="px-4 sm:px-5 py-3 flex items-center gap-2"
+                style={{
+                  borderBottom: "1px solid color-mix(in srgb, var(--t-primary) 10%, transparent)",
+                  backgroundColor: "color-mix(in srgb, var(--t-primary) 5%, transparent)",
+                }}
+              >
+                <div className="w-2 h-2 rounded-sm group-hover:animate-[blink_1s_ease-in-out_infinite]" style={{ backgroundColor: "var(--t-primary)" }} aria-hidden="true" />
+                <h3 className="pixel-text text-[8px] sm:text-[9px] tracking-wide" style={{ color: "var(--t-primary)" }}>
                   {project.title.toUpperCase()}
                 </h3>
               </div>
 
               {/* Content */}
               <div className="p-4 sm:p-5">
-                {/* Tech tags */}
                 <ul className="flex flex-wrap gap-1.5 mb-3 list-none" aria-label={`Technologies used in ${project.title}`}>
                   {project.technologies.map((tech) => (
                     <li
                       key={tech}
-                      className="text-[10px] px-2 py-0.5 rounded-sm bg-[#00a8e8]/10 text-[#00a8e8] border border-[#00a8e8]/20 font-mono"
+                      className="text-[10px] px-2 py-0.5 rounded-sm border font-mono"
+                      style={{
+                        backgroundColor: "color-mix(in srgb, var(--t-primary) 10%, transparent)",
+                        color: "var(--t-primary)",
+                        borderColor: "color-mix(in srgb, var(--t-primary) 20%, transparent)",
+                      }}
                     >
                       {tech}
                     </li>
                   ))}
                 </ul>
-
-                <p className="text-sm text-[#7a8ba8] leading-relaxed">
+                <p className="text-sm leading-relaxed" style={{ color: "var(--t-text-muted)" }}>
                   {project.description}
                 </p>
               </div>
 
-              {/* Footer links */}
-              <div className="px-4 sm:px-5 py-3 border-t border-[#00a8e8]/10 flex items-center gap-4">
+              {/* Footer */}
+              <div
+                className="px-4 sm:px-5 py-3 flex items-center gap-4"
+                style={{ borderTop: "1px solid color-mix(in srgb, var(--t-primary) 10%, transparent)" }}
+              >
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-[#7a8ba8] hover:text-[#00a8e8] transition-colors"
+                  className="flex items-center gap-1.5 text-xs transition-colors"
+                  style={{ color: "var(--t-text-muted)" }}
                   aria-label={`View ${project.title} source code on GitHub (opens in new tab)`}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--t-primary)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--t-text-muted)")}
                 >
                   <Github className="h-3.5 w-3.5" aria-hidden="true" />
                   <span className="font-mono">Source</span>
                 </a>
-
                 {project.demoUrl && (
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs text-[#7a8ba8] hover:text-[#ffd700] transition-colors"
+                    className="flex items-center gap-1.5 text-xs transition-colors"
+                    style={{ color: "var(--t-text-muted)" }}
                     aria-label={`View ${project.title} live demo (opens in new tab)`}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--t-accent2)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "var(--t-text-muted)")}
                   >
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
                     <span className="font-mono">Demo</span>
